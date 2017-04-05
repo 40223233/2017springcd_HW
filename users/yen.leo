@@ -73,7 +73,7 @@
 </v>
 <v t="yen.20170315204017.1"><vh>@edit 20170315.md</vh></v>
 <v t="yen.20170321092635.1"><vh>@edit 20170321.md</vh></v>
-<v t="yen.20170108171733.81"><vh>@path pages</vh>
+<v t="yen.20170108171733.81" a="E"><vh>@path pages</vh>
 <v t="yen.20170108171733.82"><vh>@edit pages_1.md</vh></v>
 </v>
 </v>
@@ -2117,7 +2117,7 @@ Date: 2017-03-14 11:00
 Category: Course
 Tags: brython, w1
 Slug: brython-editor-331
-Author: yen
+Author: 40223233
 
 Brython 程式環境可以用來練習許多 Python3 的簡單語法, 也可以納入 Javascript 程式庫, 利用 Ajax 模式結合網際瀏覽器與伺服器上的資源解決協同產品設計流程上的問題.
 

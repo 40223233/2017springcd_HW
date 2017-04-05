@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>2017Spring 協同產品設計實習 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/course.atom.xml" rel="self"></link><id>./</id><updated>2017-03-21T11:00:00+08:00</updated><entry><title>V-rep 平面機構運動模擬</title><link href="./vrep-planar-mechanism-simulation.html" rel="alternate"></link><published>2017-03-21T11:00:00+08:00</published><updated>2017-03-21T11:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2017-03-21:./vrep-planar-mechanism-simulation.html</id><summary type="html">&lt;p&gt;V-rep planar one-line and fourbar linkage simulation&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>2017Spring 協同產品設計實習 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/course.atom.xml" rel="self"></link><id>./</id><updated>2017-03-21T11:00:00+08:00</updated><entry><title>V-rep 平面機構運動模擬</title><link href="./vrep-planar-mechanism-simulation.html" rel="alternate"></link><published>2017-03-21T11:00:00+08:00</published><updated>2017-03-21T11:00:00+08:00</updated><author><name>40223233</name></author><id>tag:,2017-03-21:./vrep-planar-mechanism-simulation.html</id><summary type="html">&lt;p&gt;V-rep planar one-line and fourbar linkage simulation&lt;/p&gt;
 
 
 &lt;h2&gt;One-link Robot Velocity Control&lt;/h2&gt;
@@ -221,7 +221,7 @@ def setJointPosition(incAngle, steps):
 
 # 每步 10 度, 轉兩圈
 setJointPosition(10, 72)
-&lt;/pre&gt;</summary><category term="v-rep"></category><category term="w5"></category></entry><entry><title>網際平面機構模擬</title><link href="./brython-planar-linkage.html" rel="alternate"></link><published>2017-03-15T11:00:00+08:00</published><updated>2017-03-15T11:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2017-03-15:./brython-planar-linkage.html</id><summary type="html">&lt;p&gt;Brython 平面 quadratic bezier 曲線:&lt;/p&gt;
+&lt;/pre&gt;</summary><category term="v-rep"></category><category term="w5"></category></entry><entry><title>網際平面機構模擬</title><link href="./brython-planar-linkage.html" rel="alternate"></link><published>2017-03-15T11:00:00+08:00</published><updated>2017-03-15T11:00:00+08:00</updated><author><name>40223233</name></author><id>tag:,2017-03-15:./brython-planar-linkage.html</id><summary type="html">&lt;p&gt;Brython 平面 quadratic bezier 曲線:&lt;/p&gt;
 
 
 &lt;!-- 導入 Brython 標準程式庫 3.3.1 --&gt;
@@ -543,7 +543,7 @@ cgo.playAnimation()
 &lt;p&gt;Cango3D Graphics Library:&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.arc.id.au/Canvas3DGraphics.html"&gt;http://www.arc.id.au/Canvas3DGraphics.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Cango2D Graphics Library:&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://www.arc.id.au/CanvasAnimation.html"&gt;http://www.arc.id.au/CanvasAnimation.html&lt;/a&gt;&lt;/p&gt;</summary><category term="brython"></category><category term="w4"></category></entry><entry><title>網際 Brython 3.3.1 程式執行環境</title><link href="./brython-editor-331.html" rel="alternate"></link><published>2017-03-14T11:00:00+08:00</published><updated>2017-03-14T11:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2017-03-14:./brython-editor-331.html</id><summary type="html">&lt;p&gt;Brython 程式環境可以用來練習許多 Python3 的簡單語法, 也可以納入 Javascript 程式庫, 利用 Ajax 模式結合網際瀏覽器與伺服器上的資源解決協同產品設計流程上的問題.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.arc.id.au/CanvasAnimation.html"&gt;http://www.arc.id.au/CanvasAnimation.html&lt;/a&gt;&lt;/p&gt;</summary><category term="brython"></category><category term="w4"></category></entry><entry><title>網際 Brython 3.3.1 程式執行環境</title><link href="./brython-editor-331.html" rel="alternate"></link><published>2017-03-14T11:00:00+08:00</published><updated>2017-03-14T11:00:00+08:00</updated><author><name>40223233</name></author><id>tag:,2017-03-14:./brython-editor-331.html</id><summary type="html">&lt;p&gt;Brython 程式環境可以用來練習許多 Python3 的簡單語法, 也可以納入 Javascript 程式庫, 利用 Ajax 模式結合網際瀏覽器與伺服器上的資源解決協同產品設計流程上的問題.&lt;/p&gt;
 
 
 &lt;!-- 導入 FileSaver 與 filereader --&gt;
@@ -957,7 +957,7 @@ document["jansen"].bind("click", jansen)
 
 &lt;p&gt;&lt;button id="get"&gt;for1.py&lt;/button&gt;&lt;button id="get_temp1"&gt;temp1.py&lt;/button&gt;&lt;button id="get_ver_and_kw"&gt;ver_and_kw.py&lt;/button&gt;&lt;button id="jansen"&gt;jansen.py&lt;/button&gt;&lt;/p&gt;
 &lt;p&gt;Jansen 多連桿機構尺寸圖:&lt;/p&gt;
-&lt;p&gt;&lt;img src="./../data/jansen_sympy.png" width="800" /&gt;&lt;/p&gt;</summary><category term="brython"></category><category term="w1"></category></entry><entry><title>協同產品設計實習第1週任務</title><link href="./brython-2d-drawing.html" rel="alternate"></link><published>2017-02-22T11:00:00+08:00</published><updated>2017-02-22T11:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2017-02-22:./brython-2d-drawing.html</id><summary type="html">&lt;p&gt;網際協同設計資料整合, 網際 2D 程式繪圖回顧&lt;/p&gt;
+&lt;p&gt;&lt;img src="./../data/jansen_sympy.png" width="800" /&gt;&lt;/p&gt;</summary><category term="brython"></category><category term="w1"></category></entry><entry><title>協同產品設計實習第1週任務</title><link href="./brython-2d-drawing.html" rel="alternate"></link><published>2017-02-22T11:00:00+08:00</published><updated>2017-02-22T11:00:00+08:00</updated><author><name>40223233</name></author><id>tag:,2017-02-22:./brython-2d-drawing.html</id><summary type="html">&lt;p&gt;網際協同設計資料整合, 網際 2D 程式繪圖回顧&lt;/p&gt;
 
 
 &lt;h2&gt;網際協同設計資料整合&lt;/h2&gt;
@@ -1611,7 +1611,7 @@ hk = 49
 kg = 65.7
 kx, ky = pllp(hx, hy, hk, kg, gx, gy, cw=1)
 print("kx=", kx, "ky=", ky)
-&lt;/pre&gt;</summary><category term="brython"></category><category term="w1"></category></entry><entry><title>Fossil SCM 簡介</title><link href="./intro-fossil-scm.html" rel="alternate"></link><published>2017-02-17T11:00:00+08:00</published><updated>2017-02-17T11:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2017-02-17:./intro-fossil-scm.html</id><summary type="html">&lt;p&gt;Fossil SCM 是一套軟體配置管理 (Software Configuration Management) 系統, 其中包含分散式版次控管 (DVC, Distributed Version Control) 、&lt;a href="http://fossil-scm.org/xfer/doc/trunk/www/wikitheory.wiki"&gt;Wiki&lt;/a&gt; 、&lt;a href="http://fossil-scm.org/xfer/doc/trunk/www/bugtheory.wiki"&gt;Bug Tracking&lt;/a&gt; 與 &lt;a href="http://fossil-scm.org/xfer/doc/trunk/www/event.wiki"&gt;Technote&lt;/a&gt; 等功能, 可以用來控制及追蹤軟體開發專案, 並且紀錄專案開發歷程, 在協同產品設計實習課程中, 我們除了使用 git、github 與 bitbucket 之外, 將要在區域網路與系上主幹中, 配置每班兩台的 Fossil SCM 實習主機.&lt;/p&gt;
+&lt;/pre&gt;</summary><category term="brython"></category><category term="w1"></category></entry><entry><title>Fossil SCM 簡介</title><link href="./intro-fossil-scm.html" rel="alternate"></link><published>2017-02-17T11:00:00+08:00</published><updated>2017-02-17T11:00:00+08:00</updated><author><name>40223233</name></author><id>tag:,2017-02-17:./intro-fossil-scm.html</id><summary type="html">&lt;p&gt;Fossil SCM 是一套軟體配置管理 (Software Configuration Management) 系統, 其中包含分散式版次控管 (DVC, Distributed Version Control) 、&lt;a href="http://fossil-scm.org/xfer/doc/trunk/www/wikitheory.wiki"&gt;Wiki&lt;/a&gt; 、&lt;a href="http://fossil-scm.org/xfer/doc/trunk/www/bugtheory.wiki"&gt;Bug Tracking&lt;/a&gt; 與 &lt;a href="http://fossil-scm.org/xfer/doc/trunk/www/event.wiki"&gt;Technote&lt;/a&gt; 等功能, 可以用來控制及追蹤軟體開發專案, 並且紀錄專案開發歷程, 在協同產品設計實習課程中, 我們除了使用 git、github 與 bitbucket 之外, 將要在區域網路與系上主幹中, 配置每班兩台的 Fossil SCM 實習主機.&lt;/p&gt;
 
 
 &lt;h2&gt;採用 git, github, bitbucket 與 fossil 原因&lt;/h2&gt;
@@ -1969,7 +1969,7 @@ CMSimfly is a simple CMS in Flask
 &lt;p&gt;接著則在 Wiki 中建立與 Project Name 相同名稱的首頁 wiki.&lt;/p&gt;
 &lt;p&gt;之後利用 Admin-Users 建立其他用戶.&lt;/p&gt;
 &lt;p&gt;假如要修改 Fossil Server 的整體外觀, 利用  Admin-Skins, 可以透過其中的 Headers 增加客製化的內容連結表單.&lt;/p&gt;
-&lt;p&gt;假如要在 Wiki 頁面中使用較為保守安全的超連結, 編輯時選用 Fossil Wiki 格式, 若要納入 iframe 標註, 則可以改用 Markdown 格式, 若確認各用戶對於網際架構安全有一定認知, 則可以透過 Admin-Configuration 中, 勾選 Use HTML as wiki markup language, 則可以支援全部的 html 語法內容, 包括各式的 Javascript 內容.&lt;/p&gt;</summary><category term="fossil-scm"></category><category term="w2"></category></entry><entry><title>V-rep 簡介</title><link href="./vrep-introduction.html" rel="alternate"></link><published>2017-02-09T11:00:00+08:00</published><updated>2017-02-09T11:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2017-02-09:./vrep-introduction.html</id><summary type="html">&lt;p&gt;V-rep (Virtual robot experimentation platform)&lt;/p&gt;
+&lt;p&gt;假如要在 Wiki 頁面中使用較為保守安全的超連結, 編輯時選用 Fossil Wiki 格式, 若要納入 iframe 標註, 則可以改用 Markdown 格式, 若確認各用戶對於網際架構安全有一定認知, 則可以透過 Admin-Configuration 中, 勾選 Use HTML as wiki markup language, 則可以支援全部的 html 語法內容, 包括各式的 Javascript 內容.&lt;/p&gt;</summary><category term="fossil-scm"></category><category term="w2"></category></entry><entry><title>V-rep 簡介</title><link href="./vrep-introduction.html" rel="alternate"></link><published>2017-02-09T11:00:00+08:00</published><updated>2017-02-09T11:00:00+08:00</updated><author><name>40223233</name></author><id>tag:,2017-02-09:./vrep-introduction.html</id><summary type="html">&lt;p&gt;V-rep (Virtual robot experimentation platform)&lt;/p&gt;
 
 
 &lt;h2&gt;V-rep Overview&lt;/h2&gt;
