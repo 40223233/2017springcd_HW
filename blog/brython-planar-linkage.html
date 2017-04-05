@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>網際平面機構模擬 - 2017Spring 協同產品設計實習 (虎尾科大MDE)</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="./brython-planar-linkage.html">
+
+        <meta name="author" content="yen" />
+        <meta name="keywords" content="brython,w4" />
+        <meta name="description" content="Brython 平面 quadratic bezier 曲線:" />
+
+        <meta property="og:site_name" content="2017Spring 協同產品設計實習 (虎尾科大MDE)" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="網際平面機構模擬"/>
+        <meta property="og:url" content="./brython-planar-linkage.html"/>
+        <meta property="og:description" content="Brython 平面 quadratic bezier 曲線:"/>
+        <meta property="article:published_time" content="2017-03-15" />
+            <meta property="article:section" content="Course" />
+            <meta property="article:tag" content="brython" />
+            <meta property="article:tag" content="w4" />
+            <meta property="article:author" content="yen" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="./theme/css/bootstrap.united.min.css" type="text/css"/>
+    <link href="./theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="./theme/css/pygments/monokai.css" rel="stylesheet">
+    <link href="./theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
+
+        <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="2017Spring 協同產品設計實習 (虎尾科大MDE) ATOM Feed"/>
+
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushBash.js"></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://chiamingyen.github.io/kmolab_data/files/syntaxhighlighter/css/shCore.css";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://chiamingyen.github.io/kmolab_data/files/syntaxhighlighter/css/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="./" class="navbar-brand">
+2017Spring 協同產品設計實習 (虎尾科大MDE)            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="./pages/about/">
+                             About
+                          </a></li>
+                        <li class="active">
+                            <a href="./category/course.html">Course</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="./search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+              <li><a href="./archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="./brython-planar-linkage.html"
+                       rel="bookmark"
+                       title="Permalink to 網際平面機構模擬">
+                        網際平面機構模擬
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2017-03-15T11:00:00+08:00"> Wed 15 March 2017</time>
+    </span>
+            <span class="label label-default">By</span>
+            <a href="./author/yen.html"><i class="fa fa-user"></i> yen</a>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="./tag/brython.html">brython</a>
+        /
+	<a href="./tag/w4.html">w4</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>Brython 平面 quadratic bezier 曲線:</p>
+
+
+<!-- 導入 Brython 標準程式庫 3.3.1 -->
+
+<script type="text/javascript" src="./../data/brython_dist.js">
+</script>
+
+<script type="text/javascript" src="./../data/Cango-8v05-min.js"></script>
+
+<script type="text/javascript" src="./../data/Cango2D-7v04-min.js"></script>
+
+<script type="text/javascript" src="./../data/CangoAnimation-4v01.js"></script>
+
+<!-- 啟動 Brython 時, 設定 pythonpath 為 data/py -->
+
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../data/py']});
+}
+</script>
+
+<!-- 以下執行 Brython 程式 -->
+
+<canvas id="plotarea" width="600" height="600"></canvas>
+
+<script type="text/python">
+from browser import window
+
+cango = window.Cango2D.new
+shapedefs = window.shapeDefs
+obj2d = window.Obj2D.new
+group2d = window.Group2D.new
+cgo = cango("plotarea")
+
+x1, y1 = 40, 20
+cx1, cy1 = 90, 120
+x2, y2 = 120, 100
+cx2, cy2 = 130, 20
+cx3, cy3 = 150, 120
+x3, y3 = 180, 60
+
+def dragC1(mousePos):
+    global cx1, cy1
+    cx1 = mousePos.x
+    cy1 = mousePos.y
+    drawCurve()
+
+def dragC2(mousePos):
+    global cx2, cy2
+    cx2 = mousePos.x
+    cy2 = mousePos.y
+    drawCurve()
+
+def dragC3(mousePos):
+    global cx3, cy3
+    cx3 = mousePos.x
+    cy3 = mousePos.y
+    drawCurve()
+
+def drawCurve():
+    # curve change shape so it must be re-draw each time
+    # draw a quadratic bezier from x1,y2 to x2,y2
+    qbez = obj2d(['M', x1, y1, 'Q', cx1, cy1, x2, y2], "PATH",  {
+          "strokeColor":'blue'})
+    cbez = obj2d(['M', x2, y2, 'C', cx2, cy2, cx3, cy3, x3, y3], "PATH",  {
+          "strokeColor":'green'})
+    # show lines to control point
+    L1 = obj2d(['M', x1, y1, 'L', cx1, cy1, x2, y2], "PATH", {
+      "strokeColor":"rgba(0, 0, 0, 0.2)",
+      "dashed":[4]})  # semi-transparent gray
+    L2 = obj2d(['M', x2, y2, 'L', cx2, cy2], "PATH", {
+      "strokeColor":"rgba(0, 0, 0, 0.2)",
+      "dashed":[4]})
+    L3 = obj2d(['M', x3, y3, 'L', cx3, cy3], "PATH", {
+      "strokeColor":"rgba(0, 0, 0, 0.2)",
+      "dashed":[4]})
+    #c1.transform.reset()
+    c1.transform.translate(cx1, cy1)
+    #c2.transform.reset()
+    c2.transform.translate(cx2, cy2)
+    #c3.transform.reset()
+    c3.transform.translate(cx3, cy3)
+    grp = group2d(qbez, cbez, L1, L2, L3, c1, c2, c3)
+    cgo.clearCanvas()
+    cgo.render(grp)
+
+cgo.clearCanvas("lightyellow")
+cgo.setWorldCoords(0, 0, 200)
+
+# draggable control points
+c1 = obj2d(shapedefs.circle(4), "SHAPE", {"fillColor":'red'})
+c1.enableDrag(None, dragC1, None)
+c2 = c1.dup()
+c2.enableDrag(None, dragC2, None)
+c3 = c1.dup()
+c3.enableDrag(None, dragC3, None)
+drawCurve();
+</script>
+
+<p>平面機構繪圖:</p>
+<!-- 以下執行 Brython 程式 -->
+
+<canvas id="plotarea2" width="600" height="600"></canvas>
+
+<script type="text/python">
+from browser import window
+
+cango = window.Cango2D.new
+shapedefs = window.shapeDefs
+obj2d = window.Obj2D.new
+group2d = window.Group2D.new
+cgo = cango("plotarea2")
+
+x1, y1 = 40, 20
+cx1, cy1 = 90, 120
+x2, y2 = 120, 100
+cx2, cy2 = 130, 20
+cx3, cy3 = 150, 120
+x3, y3 = 180, 60
+
+def dragC1(mousePos):
+    global cx1, cy1
+    cx1 = mousePos.x
+    cy1 = mousePos.y
+    drawCurve()
+
+def dragC2(mousePos):
+    global cx2, cy2
+    cx2 = mousePos.x
+    cy2 = mousePos.y
+    drawCurve()
+
+def dragC3(mousePos):
+    global cx3, cy3
+    cx3 = mousePos.x
+    cy3 = mousePos.y
+    drawCurve()
+
+def dragX1(mousePos):
+    global x1, y1
+    x1 = mousePos.x
+    y1 = mousePos.y
+    drawCurve()
+
+def drawCurve():
+    # curve change shape so it must be re-draw each time
+    # draw a quadratic bezier from x1,y2 to x2,y2
+    qbez = obj2d(['M', x1, y1, 'Q', cx1, cy1, x2, y2], "PATH",  {
+          "strokeColor":'blue'})
+    cbez = obj2d(['M', x2, y2, 'C', cx2, cy2, cx3, cy3, x3, y3], "PATH",  {
+          "strokeColor":'green'})
+    # show lines to control point
+    '''
+    L1 = obj2d(['M', x1, y1, 'L', cx1, cy1, x2, y2], "PATH", {
+      "strokeColor":"rgba(0, 0, 0, 0.2)",
+      "dashed":[4]})  # semi-transparent gray
+    L2 = obj2d(['M', x2, y2, 'L', cx2, cy2], "PATH", {
+      "strokeColor":"rgba(0, 0, 0, 0.2)",
+      "dashed":[4]})
+    L3 = obj2d(['M', x3, y3, 'L', cx3, cy3], "PATH", {
+      "strokeColor":"rgba(0, 0, 0, 0.2)",
+      "dashed":[4]})
+    '''
+    L1 = obj2d(['M', x1, y1, 'L', cx1, cy1], "PATH", {
+      "strokeColor":"rgba(0, 0, 0, 0.2)",
+      "solided":[10]})  # semi-transparent gray
+    L2 = obj2d(['M', cx1, cy1, 'L', cx2, cy2], "PATH", {
+      "strokeColor":"rgba(0, 0, 0, 0.2)",
+      "solided":[10]})
+    L3 = obj2d(['M', cx2, cy2, 'L', cx3, cy3], "PATH", {
+      "strokeColor":"rgba(0, 0, 0, 0.2)",
+      "solided":[10]})
+    #c1.transform.reset()
+    c1.transform.translate(cx1, cy1)
+    #c2.transform.reset()
+    c2.transform.translate(cx2, cy2)
+    #c3.transform.reset()
+    c3.transform.translate(cx3, cy3)
+    #mx1.transform.reset()
+    mx1.transform.translate(x1, y1)
+    #grp = group2d(qbez, cbez, L1, L2, L3, c1, c2, c3)
+    grp = group2d(L1, L2, L3, c1, c2, c3, mx1)
+    cgo.clearCanvas()
+    cgo.render(grp)
+
+cgo.clearCanvas("lightyellow")
+cgo.setWorldCoords(0, 0, 200)
+
+# draggable control points
+c1 = obj2d(shapedefs.circle(4), "SHAPE", {"fillColor":'red'})
+c1.enableDrag(None, dragC1, None)
+c2 = c1.dup()
+c2.enableDrag(None, dragC2, None)
+c3 = c1.dup()
+c3.enableDrag(None, dragC3, None)
+mx1 = c1.dup()
+mx1.enableDrag(None, dragX1, None)
+drawCurve();
+</script>
+
+<p>機械手臂動態模擬:</p>
+<canvas id='robot' width='800' height='400'></canvas>
+
+<script type="text/python">
+from browser import window
+
+cango2d = window.Cango2D.new
+shapedefs = window.shapeDefs
+obj2d = window.Obj2D.new
+tweener = window.Tweener.new
+
+cgo = cango2d("robot")
+# 清除畫面
+cgo.clearCanvas("lightyellow")
+cgo.setWorldCoords(-50, -50, 300)
+
+# 加上基軸與第一桿
+# 畫筆移到 -20, -10, 畫直線到 -10,-10 以及 -10,0 
+standData = ['M', -20,-10, 'L', -10,-10, -10,0, 'A', 10,10,0,0,0,10,0, 'L',10,-10, 20,-10, 20,-40, -20,-40,'z']
+stand = obj2d(standData, "SHAPE", {
+        "fillColor":'darkgray',
+        "border": True,
+        "strokeColor": "#222222" })
+axle0 = obj2d(shapedefs.circle(10), "SHAPE", {
+        "fillColor":'gray',
+        "border": True,
+        "strokeColor": "#222222" })
+armGrp = cgo.createGroup2D(stand, axle0)
+
+segData = ['M',0,-8, 'A',8,8,0,0,0,0,8, 'L',50,8, 'A',8,8,0,0,0,50,-8, 'Z']
+seg1 = obj2d(segData, "SHAPE", {
+        "fillColor":'darkGray',
+        "border": True,
+        "strokeColor": "#222222",
+        "zIndex": -1 })
+# 利用 zIndex 決定疊層的先後次序
+axle1 = obj2d(shapedefs.circle(8), "SHAPE", {
+        "fillColor":'gray',
+        "border": True,
+        "strokeColor": "#222222",
+        "zIndex": 1 })
+axle1.translate(50, 0)
+seg1Grp = cgo.createGroup2D(seg1, axle1)
+armGrp.addObj(seg1Grp)
+
+# 加上第二軸
+seg2 = obj2d(segData, "SHAPE", {
+        "fillColor":'darkGray',
+        "border": True,
+        "strokeColor": "#222222",
+        "zIndex": -1 })
+axle2 = obj2d(shapedefs.circle(8), "SHAPE", {
+        "fillColor":'gray',
+        "border": True,
+        "strokeColor": "#222222",
+        "zIndex": 1 })
+axle2.translate(50, 0)
+seg2Grp = cgo.createGroup2D(seg2, axle2)
+cgo.render(seg2Grp)
+# 請注意 seg2Grp 加上 seg1Grp 物件上
+seg1Grp.addObj(seg2Grp)
+
+seg3 = obj2d(segData, "SHAPE", {
+        'fillColor':'darkGray',
+        'border': True,
+        'strokeColor': "#222222",
+        'zIndex': -1 })
+axle3 = obj2d(shapedefs.circle(6), "SHAPE", {
+        'fillColor':'gray',
+        'border': True,
+        'strokeColor': "#222222",
+        'zIndex': 1 })
+axle3.translate(50, 0)
+seg3Grp = cgo.createGroup2D(seg3, axle3)
+seg2Grp.addObj(seg3Grp)
+
+seg4Data = ['M',0,-6, 'A',6,6,0,0,0,0,6, 'L',40,6, 40,12, 50,12, 50,-12, 40,-12, 40,-6, 'Z']
+seg4 = obj2d(seg4Data, "SHAPE", {
+        'fillColor':'darkGray',
+        'border': True,
+        'strokeColor': "#222222",
+        'zIndex': -1 })
+seg3Grp.addObj(seg4)
+
+# setup animation
+animData = {'s1': [0, 80, 45, 0],
+                  's2': [0, -60, -60, 0],
+                  's3': [0, -90, 0, 90, 0],
+                  's4': [0, 30, -90, 0]}
+
+armTwnr = tweener(0, 3500, 'loop')
+
+def initArm(opts):
+    seg2Grp.transform.translate(50,0)
+    seg3Grp.transform.translate(50,0)
+    seg4.transform.translate(50,0)
+
+
+def armPathFn(time, opts):
+    seg1Rot = armTwnr.getVal(time, opts.s1)
+    seg2Rot = armTwnr.getVal(time, opts.s2)
+    seg3Rot = armTwnr.getVal(time, opts.s3)
+    seg4Rot = armTwnr.getVal(time, opts.s4)
+
+    seg1Grp.transform.rotate(seg1Rot)
+    seg2Grp.transform.rotate(seg2Rot)
+    seg2Grp.transform.translate(50,0)
+    seg3Grp.transform.rotate(seg3Rot)
+    seg3Grp.transform.translate(50,0)
+    seg4.transform.rotate(seg4Rot)
+    seg4.transform.translate(50,0)
+
+cgo.animate(armGrp, initArm, armPathFn, animData)
+cgo.playAnimation()
+</script>
+
+<p>Cango Graphics Library:</p>
+<p><a href="http://www.arc.id.au/CanvasGraphics.html">http://www.arc.id.au/CanvasGraphics.html</a></p>
+<p>Cango3D Graphics Library:</p>
+<p><a href="http://www.arc.id.au/Canvas3DGraphics.html">http://www.arc.id.au/Canvas3DGraphics.html</a></p>
+<p>Cango2D Graphics Library:</p>
+<p><a href="http://www.arc.id.au/CanvasAnimation.html">http://www.arc.id.au/CanvasAnimation.html</a></p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="./vrep-planar-mechanism-simulation.html">
+                            V-rep 平面機構運動模擬
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="./brython-planar-linkage.html">
+                            網際平面機構模擬
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="./brython-editor-331.html">
+                            網際 Brython 3.3.1 程式執行環境
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="./brython-2d-drawing.html">
+                            協同產品設計實習第1週任務
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="./intro-fossil-scm.html">
+                            Fossil SCM 簡介
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="./categories.html"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="./category/course.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Course
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="./tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group list-inline tagcloud" id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://github.com/DandyDev/pelican-bootstrap3/" target="_blank">
+                pelican-bootstrap3
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://github.com/getpelican/pelican-plugins" target="_blank">
+                pelican-plugins
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://github.com/Tipue/Tipue-Search" target="_blank">
+                Tipue search
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2017 KMOL
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="./theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./theme/js/bootstrap.min.js"></script>
+
+<!-- for https://github.com/jsor/lity lightbox video popup -->
+
+<link href="./theme/css/lity.css" rel="stylesheet">
+
+<script src="./theme/js/lity.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="./theme/js/respond.min.js"></script>
+
+
+</body>
+</html>
