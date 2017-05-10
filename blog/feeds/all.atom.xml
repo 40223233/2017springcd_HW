@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>2017Spring 協同產品設計實習 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2017-04-19T11:00:00+08:00</updated><entry><title>期中作業</title><link href="./%E6%9C%9F%E4%B8%AD%E4%BD%9C%E6%A5%AD.html" rel="alternate"></link><published>2017-04-19T11:00:00+08:00</published><updated>2017-04-19T11:00:00+08:00</updated><author><name>40223233</name></author><id>tag:,2017-04-19:./期中作業.html</id><summary type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>2017Spring 協同產品設計實習 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2017-05-10T11:00:00+08:00</updated><entry><title>W12 齒輪</title><link href="./%E9%BD%92%E8%BC%AA.html" rel="alternate"></link><published>2017-05-10T11:00:00+08:00</published><updated>2017-05-10T11:00:00+08:00</updated><author><name>40223233</name></author><id>tag:,2017-05-10:./齒輪.html</id><summary type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+&lt;p&gt;齒輪的基本 畫法
+2D 和 3D 圖以及共軛敘述&lt;/p&gt;
+&lt;p&gt;&lt;img src="./../170510/W12目標作業.png" width="600" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="./../170510/漸開線.png" width="600" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/216777163"&gt;漸開線實畫&lt;/a&gt;&lt;/p&gt;</summary><category term="0510"></category></entry><entry><title>期中作業</title><link href="./%E6%9C%9F%E4%B8%AD%E4%BD%9C%E6%A5%AD.html" rel="alternate"></link><published>2017-04-19T11:00:00+08:00</published><updated>2017-04-19T11:00:00+08:00</updated><author><name>40223233</name></author><id>tag:,2017-04-19:./期中作業.html</id><summary type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
 
 &lt;p&gt;&lt;a href="https://vimeo.com/213775556"&gt;期中第二題&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="./../w9/四連趕機構2.PNG" width="600" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="./../w9/四連趕機構2.png" width="600" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://vimeo.com/213782878"&gt;期中第三題-1&lt;/a&gt;
 &lt;a href="https://vimeo.com/213785090"&gt;期中第三題-2&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="./../w9/四連趕機構3-1.PNG" width="600" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="./../w9/四連趕機構3-1.png" width="600" /&gt;&lt;/p&gt;
 &lt;p&gt;分組繪畫 我負責組合&lt;/p&gt;
 &lt;script src="https://embed.github.com/view/3d/40223233/2017springcd_hw/gh-pages/W9/40223233.stl"&gt;&lt;/script&gt;
 
-&lt;script src="https://embed.github.com/view/3d/40223233/2017springcd_hw/gh-pages/W9/40223233-2.stl"&gt;&lt;/script&gt;</summary><category term="v-rep"></category><category term="w5"></category></entry><entry><title>V-rep 平面機構運動模擬</title><link href="./vrep-planar-mechanism-simulation.html" rel="alternate"></link><published>2017-03-21T11:00:00+08:00</published><updated>2017-03-21T11:00:00+08:00</updated><author><name>40223233</name></author><id>tag:,2017-03-21:./vrep-planar-mechanism-simulation.html</id><summary type="html">&lt;p&gt;V-rep planar one-line and fourbar linkage simulation&lt;/p&gt;
+&lt;script src="https://embed.github.com/view/3d/40223233/2017springcd_hw/gh-pages/W9/40223233-2.stl"&gt;&lt;/script&gt;</summary><category term="v-rep"></category><category term="w9"></category></entry><entry><title>V-rep 平面機構運動模擬</title><link href="./vrep-planar-mechanism-simulation.html" rel="alternate"></link><published>2017-03-21T11:00:00+08:00</published><updated>2017-03-21T11:00:00+08:00</updated><author><name>40223233</name></author><id>tag:,2017-03-21:./vrep-planar-mechanism-simulation.html</id><summary type="html">&lt;p&gt;V-rep planar one-line and fourbar linkage simulation&lt;/p&gt;
 
 
 &lt;h2&gt;One-link Robot Velocity Control&lt;/h2&gt;
