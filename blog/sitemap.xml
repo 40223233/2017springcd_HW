@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>./</loc>
-<lastmod>2017-06-14T09:54:13-00:00</lastmod>
+<lastmod>2017-06-14T11:00:03-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./archives.html</loc>
-<lastmod>2017-06-14T09:54:13-00:00</lastmod>
+<lastmod>2017-06-14T11:00:03-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tags.html</loc>
-<lastmod>2017-06-14T09:54:13-00:00</lastmod>
+<lastmod>2017-06-14T11:00:03-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./categories.html</loc>
-<lastmod>2017-06-14T09:54:13-00:00</lastmod>
+<lastmod>2017-06-14T11:00:03-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -151,6 +151,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>./tag/0614.html</loc>
+<lastmod>2017-06-14T11:00:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>./tag/w1.html</loc>
 <lastmod>2017-03-14T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
@@ -158,15 +165,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>./tag/0517.html</loc>
-<lastmod>2017-05-17T11:00:00+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>./tag/0531.html</loc>
-<lastmod>2017-05-31T11:00:00+08:06</lastmod>
+<loc>./tag/w4.html</loc>
+<lastmod>2017-03-15T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -179,8 +179,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>./tag/syllabus.html</loc>
-<lastmod>2017-01-08T11:00:00+08:06</lastmod>
+<loc>./tag/v-rep.html</loc>
+<lastmod>2017-04-19T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -193,20 +193,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>./tag/0510.html</loc>
-<lastmod>2017-05-10T11:00:00+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>./tag/0614.html</loc>
-<lastmod>2017-06-14T11:00:00+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>./tag/brython.html</loc>
 <lastmod>2017-03-15T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
@@ -214,15 +200,29 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>./tag/v-rep.html</loc>
-<lastmod>2017-04-19T11:00:00+08:06</lastmod>
+<loc>./tag/0517.html</loc>
+<lastmod>2017-05-17T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./tag/w4.html</loc>
-<lastmod>2017-03-15T11:00:00+08:06</lastmod>
+<loc>./tag/0510.html</loc>
+<lastmod>2017-05-10T11:00:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>./tag/syllabus.html</loc>
+<lastmod>2017-01-08T11:00:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>./tag/0531.html</loc>
+<lastmod>2017-05-31T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
